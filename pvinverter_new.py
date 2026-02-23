@@ -186,7 +186,8 @@ def main():
   mainloop.run()
 
 # Konfiguration MQTT
-client = mqtt.Client(MQTTNAME) # create new instance
+#client = mqtt.Client(MQTTNAME) # create new instance
+client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1, MQTTNAME)
 client.on_disconnect = on_disconnect
 client.on_connect = on_connect
 client.on_message = on_message
