@@ -118,7 +118,7 @@ class DbusDummyService2:
       self._dbusservice.add_path(
         path, settings['initial'], writeable=True, onchangecallback=self._handlechangedvalue)
 
-    gobject.timeout_add(10000, self._update) # pause 10000ms before the next request
+    gobject.timeout_add(60000, self._update) # pause 60s before the next request, same rate as MQTT Updates
 
   # /Ac/Energy/Forward is in kwh, 73311 is the offset of the total energy at begin of 12.09.23
   def _update(self):
